@@ -3,19 +3,41 @@
 {% block title %}Register{% endblock %}
 
 {% block body %}
-    <h1>Register</h1>
+   
 
     {{ form_start(registrationForm) }}
-        {{ form_row(registrationForm.lastname) }}
-        {{ form_row(registrationForm.firstname) }}
-        {{ form_row(registrationForm.email) }}
-        {{ form_row(registrationForm.birthdate) }}
-        {{ form_row(registrationForm.phone) }}
-        {{ form_row(registrationForm.plainPassword, {
+    <div class="container ">
+        <div class="row">
+           {{ form_row(registrationForm.lastname, {
+               label: 'Nom'
+           }) }}
+        </div>
+        <div class="row">
+            {{ form_row(registrationForm.firstname, {
+                label: 'Prenom'
+            }) }}
+        </div>
+      <div class="row">
+          {{ form_row(registrationForm.email) }}
+      </div>
+      <div class="row">
+ {{ form_row(registrationForm.birthdate) }}
+      </div>
+      <div class="row">
+ {{ form_row(registrationForm.phone) }}
+      </div>
+      <div class="row">
+ {{ form_row(registrationForm.plainPassword, {
             label: 'Password'
         }) }}
+      </div>
+        
+       
+       
+       
      
    {{ form_row(registrationForm.agreeTerms) }}
         <button type="submit" class="btn">Register</button>
+    </div>
     {{ form_end(registrationForm) }}
 {% endblock %}
