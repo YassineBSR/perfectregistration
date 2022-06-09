@@ -4,176 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "270fd2dcbd88001d10e0bb56fb55ed89",
+    "content-hash": "d24906c7435b4ce47e12744dc24c8ba2",
     "packages": [
-        {
-            "name": "craue/formflow-bundle",
-            "version": "3.6.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/craue/CraueFormFlowBundle.git",
-                "reference": "af3db3519a9e62920c439b80d17ff4db689a5d60"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/craue/CraueFormFlowBundle/zipball/af3db3519a9e62920c439b80d17ff4db689a5d60",
-                "reference": "af3db3519a9e62920c439b80d17ff4db689a5d60",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^7.3|^8",
-                "symfony/config": "~4.4|~5.3|^6.0",
-                "symfony/dependency-injection": "~4.4|~5.3|^6.0",
-                "symfony/event-dispatcher": "~4.4|~5.3|^6.0",
-                "symfony/form": "~4.4|~5.3|^6.0",
-                "symfony/http-foundation": "~4.4|~5.3|^6.0",
-                "symfony/http-kernel": "~4.4|~5.3|^6.0",
-                "symfony/options-resolver": "~4.4|~5.3|^6.0",
-                "symfony/security-core": "~4.4|~5.3|^6.0",
-                "symfony/translation": "~4.4|~5.3|^6.0",
-                "symfony/validator": "~4.4|~5.3|^6.0",
-                "symfony/yaml": "~4.4|~5.3|^6.0"
-            },
-            "require-dev": {
-                "craue/translations-tests": "^1.1",
-                "doctrine/annotations": "^1.6",
-                "doctrine/common": "~2.9|~3.0",
-                "doctrine/doctrine-bundle": "~1.10|~2.0",
-                "phpunit/phpunit": "^9.5",
-                "symfony/browser-kit": "~4.4|~5.3|^6.0",
-                "symfony/css-selector": "~4.4|~5.3|^6.0",
-                "symfony/mime": "~4.4|~5.3|^6.0",
-                "symfony/phpunit-bridge": "^6",
-                "symfony/security-bundle": "~4.4|~5.3|^6.0",
-                "symfony/twig-bundle": "~4.4|~5.3|^6.0"
-            },
-            "type": "symfony-bundle",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "3.6.x-dev"
-                },
-                "symfony": {
-                    "require": "~4.4|~5.3|^6.0"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Craue\\FormFlowBundle\\": ""
-                },
-                "exclude-from-classmap": [
-                    "/Tests/"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Christian Raue",
-                    "email": "christian.raue@gmail.com"
-                },
-                {
-                    "name": "Symfony Community",
-                    "homepage": "https://github.com/craue/CraueFormFlowBundle/contributors"
-                }
-            ],
-            "description": "Multi-step forms for your Symfony project.",
-            "homepage": "https://github.com/craue/CraueFormFlowBundle",
-            "keywords": [
-                "form",
-                "step",
-                "symfony",
-                "wizard"
-            ],
-            "support": {
-                "issues": "https://github.com/craue/CraueFormFlowBundle/issues",
-                "source": "https://github.com/craue/CraueFormFlowBundle/tree/3.6.0"
-            },
-            "time": "2022-01-24T14:43:05+00:00"
-        },
-        {
-            "name": "craue/formflow-demo-bundle",
-            "version": "3.6.x-dev",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/craue/CraueFormFlowDemoBundle.git",
-                "reference": "d3441230fdf396bd374f0fa4581172d4d00e1993"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/craue/CraueFormFlowDemoBundle/zipball/d3441230fdf396bd374f0fa4581172d4d00e1993",
-                "reference": "d3441230fdf396bd374f0fa4581172d4d00e1993",
-                "shasum": ""
-            },
-            "require": {
-                "craue/formflow-bundle": "~3.6@dev",
-                "doctrine/annotations": "^1.13",
-                "doctrine/orm": "^2.5.2",
-                "symfony/config": "~4.4|~5.3|^6",
-                "symfony/dependency-injection": "~4.4|~5.3|^6",
-                "symfony/event-dispatcher": "~4.4|~5.3|^6",
-                "symfony/form": "~4.4|~5.3|^6",
-                "symfony/framework-bundle": "~4.4|~5.3|^6",
-                "symfony/http-foundation": "~4.4|~5.3|^6",
-                "symfony/http-kernel": "~4.4|~5.3|^6",
-                "symfony/intl": "~4.4|~5.3|^6",
-                "symfony/options-resolver": "~4.4|~5.3|^6",
-                "symfony/routing": "~4.4|~5.3|^6",
-                "symfony/translation": "~4.4|~5.3|^6",
-                "symfony/validator": "~4.4|~5.3|^6"
-            },
-            "require-dev": {
-                "craue/translations-tests": "^1.1",
-                "phpunit/phpunit": "^9.5",
-                "symfony/asset": "~4.4|~5.3|^6",
-                "symfony/browser-kit": "~4.4|~5.3|^6",
-                "symfony/css-selector": "~4.4|~5.3|^6",
-                "symfony/mime": "~4.4|~5.3|^6",
-                "symfony/phpunit-bridge": "^6",
-                "symfony/security-bundle": "~4.4|~5.3|^6",
-                "symfony/twig-bundle": "~4.4|~5.3|^6"
-            },
-            "default-branch": true,
-            "type": "symfony-bundle",
-            "extra": {
-                "symfony": {
-                    "require": "~4.4|~5.3|^6"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Craue\\FormFlowDemoBundle\\": ""
-                },
-                "exclude-from-classmap": [
-                    "/Tests/"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Christian Raue",
-                    "email": "christian.raue@gmail.com"
-                }
-            ],
-            "description": "Example code showcasing the features of CraueFormFlowBundle.",
-            "homepage": "https://github.com/craue/CraueFormFlowDemoBundle",
-            "keywords": [
-                "demo",
-                "form",
-                "step",
-                "symfony",
-                "wizard"
-            ],
-            "support": {
-                "issues": "https://github.com/craue/CraueFormFlowDemoBundle/issues",
-                "source": "https://github.com/craue/CraueFormFlowDemoBundle/tree/3.6.x"
-            },
-            "time": "2022-03-31T13:25:33+00:00"
-        },
         {
             "name": "doctrine/annotations",
             "version": "1.13.2",
@@ -5742,6 +5574,72 @@
             "time": "2022-03-02T13:21:45+00:00"
         },
         {
+            "name": "symfony/requirements-checker",
+            "version": "v2.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/requirements-checker.git",
+                "reference": "cf8893f384348a338157d637e170fe8fb2356016"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/requirements-checker/zipball/cf8893f384348a338157d637e170fe8fb2356016",
+                "reference": "cf8893f384348a338157d637e170fe8fb2356016",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.9"
+            },
+            "bin": [
+                "bin/requirements-checker"
+            ],
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-main": "2.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Requirements\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                }
+            ],
+            "description": "Check Symfony requirements and give recommendations",
+            "keywords": [
+                "configuration",
+                "distribution"
+            ],
+            "support": {
+                "issues": "https://github.com/symfony/requirements-checker/issues",
+                "source": "https://github.com/symfony/requirements-checker/tree/v2.0.1"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2021-11-30T16:18:33+00:00"
+        },
+        {
             "name": "symfony/routing",
             "version": "v6.1.0",
             "source": {
@@ -10068,9 +9966,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "craue/formflow-demo-bundle": 20
-    },
+    "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
