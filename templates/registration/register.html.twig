@@ -1,43 +1,108 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Register{% endblock %}
+{% block title %}Perfect Registration - Inscription{% endblock %}
+
+{% block stylesheet %}
+<link rel="stylesheet" href="{{ asset('assets/datepicker/datepicker.css') }}" />
+{% endblock %}
 
 {% block body %}
-   
 
-    {{ form_start(registrationForm) }}
-    <div class="container ">
-        <div class="row">
-           {{ form_row(registrationForm.lastname, {
-               label: 'Nom'
+
+{{ form_start(registrationForm) }}
+<div class="container card mb-3 shadow" style="max-width: 40rem;">
+    <div>
+        <h2 class="text-center mb-3 mt-3">INSCRIPTION</h2>
+    </div>
+    <div class="row mb-3">
+        <div class="col-md">
+         {{ form_row(registrationForm.lastname,{
+            label: 'Nom',
+               'attr' : { 
+                'placeholder': 'Nom'},
+                row_attr: {
+                    class: 'form-floating'
+                }
+               
            }) }}
-        </div>
-        <div class="row">
+            </div>
+        <div class="col">
             {{ form_row(registrationForm.firstname, {
-                label: 'Prenom'
+                label: 'Prenom',
+                'attr' : { 
+                    'placeholder': 'Prenom'},
+                    row_attr: {
+                        class: 'form-floating'
+                    }
+                   
             }) }}
         </div>
-      <div class="row">
-          {{ form_row(registrationForm.email) }}
-      </div>
-      <div class="row">
- {{ form_row(registrationForm.birthdate) }}
-      </div>
-      <div class="row">
- {{ form_row(registrationForm.phone) }}
-      </div>
-      <div class="row">
- {{ form_row(registrationForm.plainPassword, {
-            label: 'Password'
-        }) }}
-      </div>
-        
-       
-       
-       
-     
-   {{ form_row(registrationForm.agreeTerms) }}
-        <button type="submit" class="btn">Register</button>
     </div>
-    {{ form_end(registrationForm) }}
+    <div class="row mb-3">
+        <div class="col">
+                    {{ form_row(registrationForm.email, {
+            label: 'Email',
+                'attr' : { 
+                    'placeholder': 'Email'},
+                    row_attr: {
+                        class: 'form-floating'
+                    }
+                   
+        }) }}
+        </div>
+
+    </div>
+    <div class="row mb-3">
+    <div class="col">
+        {{ form_row(registrationForm.birthdate, {
+            label: 'Anniversaire',
+            'attr' : { 
+                'placeholder': 'Anniversaire'},
+                row_attr: {
+                    class: 'form-floating'
+                }
+        }) }}
+    </div>
+    <div class="col">
+        {{ form_row(registrationForm.phone, {
+            label:'Téléphone',
+            'attr' : { 
+                'placeholder': 'Téléphone'},
+                row_attr: {
+                    class: 'form-floating'
+                }
+        }) }}
+    </div> 
+    </div>
+    <div class="row mb-3">
+        <div class="col">
+                   {{ form_row(registrationForm.plainPassword, {
+            label: 'Mot de Passe',
+            'attr' : { 
+                'placeholder': 'Mot de passe'},
+                row_attr: {
+                    class: 'form-floating'
+                }
+        }) }} 
+        </div>
+    </div>
+    {{ form_row(registrationForm.agreeTerms, {
+        label: 'Accepter les conditions'
+    }) }}
+    <div class="d-grid gap-2 col-6 mx-auto">
+        <button type="submit" class="btn border border-3 rounded-pill">S'inscrire</button>
+    </div>
+    
+</div>
+{{ form_end(registrationForm) }}
+{% endblock %}
+
+
+{% block javascripts %}
+<script src="{{ asset('assets/datepicker/datepicker.js') }}"></script>
+<script>
+    jQuery(Document).ready(function () {
+        $('.js-datepicker').datepicker();
+    });
+</script>
 {% endblock %}

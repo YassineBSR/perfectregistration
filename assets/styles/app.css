@@ -20,3 +20,18 @@ body{
     font-size: xx-large;
     
 }
+button{
+  background-clip: border-box;
+  color: white;
+    background: linear-gradient(90deg, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+    -webkit-background-clip: border-box;
+    -webkit-text-fill-color:white;
+    font-size:large;
+  
+    
+    
+}
+
+.card{
+    border-radius: 20px;
+}

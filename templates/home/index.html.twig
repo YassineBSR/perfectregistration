@@ -1,7 +1,22 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello HomeController!{% endblock %}
+{% block title %}Perfect Registration - Home{% endblock %}
 
 {% block body %}
+<div class="container">
+    <div class="row">
+      <div class="col-sm">  
+        {% if app.user %}
+      <p class="h1">Bonjour {{ app.user.firstname }} <br></p>
+       
+         {% else %}
+        <p class="h1">Bonjour,</p>
+    
+        {% endif %}
+      </div>
+   
+    </div>
+</div>
+
 
 {% endblock %}
