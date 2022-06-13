@@ -7,10 +7,11 @@
     <div class="row">
       <div class="col-sm">  
         {% if app.user %}
-      <p class="h1">Bonjour {{ app.user.firstname }} <br></p>
+      <p class="h1 arvos">Bonjour {{ app.user.firstname }}.<br></p>
        
          {% else %}
-        <p class="h1">Bonjour,</p>
+        <p class="h1 text-dark arvos">
+            Le meilleur formulaire d'inscription qui existe.</p>
     
         {% endif %}
       </div>

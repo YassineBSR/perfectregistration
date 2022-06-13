@@ -1,6 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
-
+@import '~@fortawesome/fontawesome-free/css/fontawesome.css';
+@import '~@fortawesome/fontawesome-free/css/regular.css';
+@import '~@fortawesome/fontawesome-free/css/solid.css';
+@import '~@fortawesome/fontawesome-free/css/brands.css';
+@import url('https://fonts.googleapis.com/css2?family=Arvo:wght@400;700&display=swap');
 *{
   font-family: 'Montserrat', sans-serif;
 }
@@ -34,4 +38,50 @@ button{
 
 .card{
     border-radius: 20px;
+}
+
+.xcl-divider{
+  padding: 24px 0;
+  text-align: center;
+  position: relative;
+}
+
+.xcl-divider>span{
+  display: block;
+  position: relative;
+  margin: 0 auto;
+  width: 70px;
+  z-index: 11;
+  background-color: #FEFDFC;
+  color: #8189B0;
+  font-weight: 400;
+  text-align: center;
+  font-size: 18px;
+  line-height: 24px;
+}
+.xcl-divider:before{
+  content: "";
+  top: 50%;
+  left: 0;
+  right: 0;
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background-color: #D2DBF2;
+}
+
+.fa-facebook {
+  color: rgb(59, 91, 152);
+}
+
+.fa-github {
+  color: black;
+}
+
+.fa-google{
+  color: red;
+}
+.arvos{
+  font-family: 'Arvo', serif !important;
+
 }

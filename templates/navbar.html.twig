@@ -1,21 +1,22 @@
   <nav class="navbar navbar-expand-lg navbar-light bg-light shadow p-3 mb-5 ">
     <div class="container-fluid">
-     <h2><a class="navbar-brand title" href={{path("app_home")}}>Perfect Registration</a></h2>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <h2><a class="navbar-brand title" href={{path("app_home")}}>Perfect Registration</a></h2>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse flex-row-reverse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-         <a class="nav-link" href={{path("app_home")}}>Home</a>
-       
-         {% if app.user %}
-         <a class="nav-link" href="{{ path('app_logout') }}">Deconnexion</a>
-       
-         {% else %}
-         <a class="nav-link" href={{path("app_login")}}>Connection</a> 
-         <a class="nav-link" href={{path("app_register")}}>Inscription</a>
-        {% endif %}
-        </div>
+        <nav class="navbar-nav">
+          <a class="nav-link" href={{path("app_home")}}>Home</a>
+
+          {% if app.user %}
+          <a class="nav-link">{{ app.user.firstname }}</a>
+          <a class="nav-link" href="{{ path('app_logout') }}">Deconnexion</a>
+          {% else %}
+          <a class="nav-link" href={{path("app_login")}}>Connection</a>
+          <a class="nav-link" href={{path("app_register")}}>Inscription</a>
+          {% endif %}
+        </nav>
       </div>
     </div>
   </nav>

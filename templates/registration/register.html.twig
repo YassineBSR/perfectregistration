@@ -11,9 +11,21 @@
 
 {{ form_start(registrationForm) }}
 <div class="container card mb-3 shadow" style="max-width: 40rem;">
-    <div>
+    <div class="mb-3">
         <h2 class="text-center mb-3 mt-3">INSCRIPTION</h2>
     </div>
+    <div class="row mb-3">
+        <div class="col">
+            <a class="text-decoration-none" href=""><i class="fa-brands fa-google d-flex justify-content-center fa-2xl"></i></a> 
+        </div>
+        <div class="col">
+           <a href="" class="text-decoration-none"><i class="fa-brands fa-facebook d-flex justify-content-center fa-2xl"></i></a> 
+        </div>
+        <div class="col">
+          <a href="" class="text-decoration-none"><i class="fa-brands fa-github d-flex justify-content-center fa-2xl"></i></a>  
+        </div>
+    </div>
+    <div class="xcl-divider"><span>OU</span></div>
     <div class="row mb-3">
         <div class="col-md">
          {{ form_row(registrationForm.lastname,{
