@@ -4,20 +4,17 @@
 
 {% block body %}
 <div class="container">
-    <div class="row">
-      <div class="col-sm">  
-        {% if app.user %}
-      <p class="h1 arvos">Bonjour {{ app.user.firstname }}.<br></p>
-       
-         {% else %}
-        <p class="h1 text-dark arvos">
-            Le meilleur formulaire d'inscription qui existe.</p>
-    
-        {% endif %}
-      </div>
-   
+    <div class="row text-center">
+        <div class=" text-center mb-4">
+            <h1 class="big">Le meilleur formulaire <br> d'inscription qui existe.</h1>
+            <h2 class="mini">Venez tester et vous verrez.</h2>
+        </div>
+        <div class="d-grid gap-2 col-3 mx-auto">
+            <button type="submit" class="btn border border-3 rounded-pill"><a class="text-decoration-none text-white" href={{path("app_register")}}>S'inscrire</a></button>
+        </div>
     </div>
 </div>
+
 
 
 {% endblock %}

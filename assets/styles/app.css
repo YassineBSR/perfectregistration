@@ -85,3 +85,19 @@ button{
   font-family: 'Arvo', serif !important;
 
 }
+.mini{
+  color: #5e5e5e;
+  margin: 10px 0 0 0;
+  font-size: 22px;
+}
+.big{
+  margin: 0;
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 72px;
+  color: #124265;
+  font-family: 'Arvo', serif !important;
+}
+.text-center{
+  text-align: center !important;
+}
