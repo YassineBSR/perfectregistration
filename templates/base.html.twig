@@ -39,7 +39,7 @@
                 <li class="nav-item"><a href="{{path('app_home')}}" class="nav-link px-2 text-muted">Home</a></li>
                 {% if app.user %}
                 <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">{{ app.user.firstname }}</a></li>
-                <li class="nav-item"><a href="{{path('app_logout') }} class="nav-link px-2 text-muted">Connection</a></li>
+                <li class="nav-item"><a href="{{path('app_logout')}}" class="nav-link px-2 text-muted">Deconnexion</a></li>
                 {% else %}
                 <li class="nav-item"><a href={{path("app_login")}} class="nav-link px-2 text-muted">Connection</a></li>
 

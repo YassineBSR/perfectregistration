@@ -88,6 +88,16 @@
     </div>
     <div class="row mb-3">
         <div class="col">
+                   {{ form_row(registrationForm.genre, {
+            label: 'Genre',
+            'attr' : { 
+                'placeholder': 'Genre'},
+                row_attr: {
+                    class: 'form-floating'
+                }
+        }) }} 
+        </div>
+        <div class="col">
                    {{ form_row(registrationForm.plainPassword, {
             label: 'Mot de Passe',
             'attr' : { 

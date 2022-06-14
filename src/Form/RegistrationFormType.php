@@ -6,6 +6,7 @@ use App\Entity\User;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -27,6 +28,13 @@ class RegistrationFormType extends AbstractType
                 'attr' => ['class' => 'form-control js-datepicker'],
                 'widget' => 'single_text',
                 
+            ])
+            ->add('genre', ChoiceType::class, [
+                'choices' => [
+                    'Autre' => 'Autre',
+                    'Homme' => 'Homme',
+                    'Femme' => 'Femme',
+                ],
             ])
             ->add('plainPassword', PasswordType::class, [
                 // instead of being set onto the object directly,
