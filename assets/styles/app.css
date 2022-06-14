@@ -31,9 +31,6 @@ button{
     -webkit-background-clip: border-box;
     -webkit-text-fill-color:white;
     font-size:large;
-  
-    
-    
 }
 
 .card{
@@ -92,7 +89,7 @@ button{
 }
 .big{
   margin: 0;
-  font-size: 56px;
+  font-size: 50px;
   font-weight: 700;
   line-height: 72px;
   color: #124265;
