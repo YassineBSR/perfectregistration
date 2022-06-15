@@ -9,6 +9,7 @@ use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints\IsTrue;
@@ -20,8 +21,20 @@ class RegistrationFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('lastname')
-            ->add('firstname')
+            ->add('lastname',TextType::class, [
+                'constraints' => [new Length([
+                 'min' => 2,
+                 'minMessage' => 'Votre nom doit comporter au moins {{ limit }} caractères',
+                 ])
+                ],
+            ])
+            ->add('firstname',TextType::class, [
+                'constraints' => [new Length([
+                 'min' => 2,
+                 'minMessage' => 'Votre prenom doit comporter au moins {{ limit }} caractères',
+                 ])
+                ],
+            ])
             ->add('email')
             ->add('phone')
             ->add('birthdate', DateType::class, [
@@ -47,9 +60,9 @@ class RegistrationFormType extends AbstractType
                     ]),
                     new Length([
                         'min' => 6,
-                        'minMessage' => 'Your password should be at least {{ limit }} characters',
+                        'minMessage' => 'Votre mot de passe doit comporter au moins {{ limit }} caractères',
                         // max length allowed by Symfony for security reasons
-                        'max' => 4096,
+                        'max' => 16,
                     ]),
                 ],
             ])
