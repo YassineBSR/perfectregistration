@@ -80,7 +80,8 @@ button{
 }
 .arvos{
   font-family: 'Arvo', serif !important;
-
+  color: #124265;
+  font-weight: bold;
 }
 .mini{
   color: #5e5e5e;
