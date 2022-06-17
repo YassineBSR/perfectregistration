@@ -12,28 +12,24 @@ class GithubController extends AbstractController
 {
     /**
      * Link to this controller to start the "connect" process
-     *
-     * @Route("/connect/github", name="connect_github_start")
      */
+    #[Route('/connect/github', name: 'connect_github_start')]
     public function connectAction(ClientRegistry $clientRegistry)
     {
-        // on Symfony 3.3 or lower, $clientRegistry = $this->get('knpu.oauth2.registry');
+        
 
-        // will redirect to Facebook!
+        // will redirect to Github!
         return $clientRegistry
             ->getClient('github') // key used in config/packages/knpu_oauth2_client.yaml
-            ->redirect([
-                'public_profile', 'email', // the scopes you want to access
-            ]);
+            ->redirect(['user', 'user:email','read:user']);
     }
 
     /**
-     * After going to Facebook, you're redirected back here
+     * After going to Github, you're redirected back here
      * because this is the "redirect_route" you configured
      * in config/packages/knpu_oauth2_client.yaml
-     *
-     * @Route("/connect/github/check", name="connect_github_check")
      */
+    #[Route('/connect/github/check', name: 'connect_github_check')]
     public function connectCheckAction(Request $request, ClientRegistry $clientRegistry)
     {
         // ** if you want to *authenticate* the user, then
@@ -45,7 +41,7 @@ class GithubController extends AbstractController
 
         try {
             // the exact class depends on which provider you're using
-            /** @var \League\OAuth2\Client\Provider\GithubUser $user */
+            /** @var \League\OAuth2\Client\Provider\Github $user */
             $user = $client->fetchUser();
 
             // do something with all this new power!
