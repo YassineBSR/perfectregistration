@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3306
--- Généré le : jeu. 16 juin 2022 à 15:16
+-- Généré le : ven. 17 juin 2022 à 12:50
 -- Version du serveur : 10.5.8-MariaDB-log
 -- Version de PHP : 8.1.3
 
@@ -43,7 +43,10 @@ INSERT INTO `doctrine_migration_versions` (`version`, `executed_at`, `execution_
 ('DoctrineMigrations\\Version20220614144703', '2022-06-14 14:47:09', 102),
 ('DoctrineMigrations\\Version20220615094147', '2022-06-15 09:42:13', 148),
 ('DoctrineMigrations\\Version20220615145142', '2022-06-15 14:52:18', 127),
-('DoctrineMigrations\\Version20220616150957', '2022-06-16 15:10:09', 133);
+('DoctrineMigrations\\Version20220616150957', '2022-06-16 15:10:09', 133),
+('DoctrineMigrations\\Version20220616153807', '2022-06-16 15:38:13', 105),
+('DoctrineMigrations\\Version20220617084343', '2022-06-17 12:44:59', 185),
+('DoctrineMigrations\\Version20220617124656', '2022-06-17 12:47:03', 167);
 
 -- --------------------------------------------------------
 
@@ -76,17 +79,9 @@ CREATE TABLE `user` (
   `firstname` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `birthdate` date DEFAULT NULL,
   `phone` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `genre` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+  `genre` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `github_id` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Déchargement des données de la table `user`
---
-
-INSERT INTO `user` (`id`, `email`, `roles`, `password`, `lastname`, `firstname`, `birthdate`, `phone`, `genre`) VALUES
-(8, 'Yassine60160@gmail.com', '[]', '$2y$13$1MdunivvgzSTe6crI8lBMO/Cdgp7eMaFDyyKWMv0BZX/eP1.Z.v2G', 'Basrire', 'Yassine', '2001-01-11', '0768519194', NULL),
-(9, 'abc@gmail.com', '[]', '$2y$13$4a9VmjsqNTHULi8RoMs1O.S3D5GSJ9TSGP4Nwctz1YnJHCTykdgMS', 'jesica', 'joe', '1997-06-04', '1234567814', 'Femme'),
-(11, 'Yassine@gmail.com', '[]', '$2y$13$O0Z9TaprOKwL7lqEYHpJeOfr6rptg88pASkVAymeWwgZYlBVORBG2', 'Basrire', 'Yassine', '2002-01-16', '0768519194', 'Homme');
 
 --
 -- Index pour les tables déchargées
