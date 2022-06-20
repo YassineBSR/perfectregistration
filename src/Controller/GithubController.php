@@ -21,7 +21,9 @@ class GithubController extends AbstractController
         // will redirect to Github!
         return $clientRegistry
             ->getClient('github') // key used in config/packages/knpu_oauth2_client.yaml
-            ->redirect(['user', 'user:email','read:user']);
+            ->redirect([
+                'user','user:email'
+            ]);
     }
 
     /**
@@ -41,9 +43,10 @@ class GithubController extends AbstractController
 
         try {
             // the exact class depends on which provider you're using
-            /** @var \League\OAuth2\Client\Provider\Github $user */
+            /** @var \League\OAuth2\Client\Provider\GithubResourceOwner $user */
             $user = $client->fetchUser();
 
+            
             // do something with all this new power!
             // e.g. $name = $user->getFirstName();
             var_dump($user); die;

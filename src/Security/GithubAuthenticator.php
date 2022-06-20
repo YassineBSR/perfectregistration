@@ -15,6 +15,7 @@ use Symfony\Component\Security\Core\Exception\AuthenticationException;
 use Symfony\Component\Security\Http\Authenticator\Passport\Badge\UserBadge;
 use Symfony\Component\Security\Http\Authenticator\Passport\Passport;
 use Symfony\Component\Security\Http\Authenticator\Passport\SelfValidatingPassport;
+use KnpU\OAuth2ClientBundle\Client\Provider\GithubClient;
 
 class GithubAuthenticator extends OAuth2Authenticator
 {
@@ -42,13 +43,13 @@ class GithubAuthenticator extends OAuth2Authenticator
 
         return new SelfValidatingPassport(
             new UserBadge($accessToken->getToken(), function() use ($accessToken, $client) {
-                /** @var GithubUser $githubUser */
-                $githubUser = $client->fetchUserFromToken($accessToken);
+                /** @var GithubResourceOwner $githubResourceOwner */
+                $githubResourceOwner = $client->fetchUserFromToken($accessToken);
 
-                $email = $githubUser->getEmail();
+                $email = $githubResourceOwner->getEmail();
 
                 // 1) have they logged in with Github before? Easy!
-                $existingUser = $this->entityManager->getRepository(User::class)->findOneBy(['githubId' => $githubUser->getId()]);
+                $existingUser = $this->entityManager->getRepository(User::class)->findOneBy(['githubId' => $githubResourceOwner->getId()]);
 
                 if ($existingUser) {
                     return $existingUser;
@@ -59,7 +60,7 @@ class GithubAuthenticator extends OAuth2Authenticator
 
                 // 3) Maybe you just want to "register" them by creating
                 // a User object
-                $user->setGithubId($githubUser->getId());
+                $user->setGithubId($githubResourceOwner->getId());
                 $this->entityManager->persist($user);
                 $this->entityManager->flush();
 

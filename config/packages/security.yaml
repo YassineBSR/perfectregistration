@@ -17,6 +17,7 @@ security:
         main:
             lazy: true
             provider: app_user_provider
+            entry_point: App\Security\LoginFormAuthenticator
             custom_authenticator: 
                         - App\Security\LoginFormAuthenticator
                         - App\Security\GithubAuthenticator
@@ -35,7 +36,7 @@ security:
     # Note: Only the *first* access control that matches will be used
     access_control:
         # - { path: ^/admin, roles: ROLE_ADMIN }
-         - { path: ^/profile, roles: ROLE_USER }
+        # - { path: ^/profile, roles: ROLE_USER }
 
 when@test:
     security:

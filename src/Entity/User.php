@@ -42,7 +42,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(type: 'string', length: 255, nullable: true)]
     private $genre;
 
-    #[ORM\Column(type: 'string', length: 255, nullable: true)]
+    #[ORM\Column(type: 'string', length: 255)]
     private $githubId;
 
     public function getId(): ?int
@@ -175,12 +175,12 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $this;
     }
 
-    public function getGithubId(): ?string
+    public function getGithubId(): string
     {
         return $this->githubId;
     }
 
-    public function setGithubId(?string $githubId): self
+    public function setGithubId(string $githubId): self
     {
         $this->githubId = $githubId;
 
