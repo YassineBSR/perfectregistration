@@ -15,7 +15,7 @@ use Symfony\Component\Security\Core\Exception\AuthenticationException;
 use Symfony\Component\Security\Http\Authenticator\Passport\Badge\UserBadge;
 use Symfony\Component\Security\Http\Authenticator\Passport\Passport;
 use Symfony\Component\Security\Http\Authenticator\Passport\SelfValidatingPassport;
-use KnpU\OAuth2ClientBundle\Client\Provider\GithubClient;
+
 
 class GithubAuthenticator extends OAuth2Authenticator
 {
@@ -53,10 +53,24 @@ class GithubAuthenticator extends OAuth2Authenticator
 
                 if ($existingUser) {
                     return $existingUser;
+                } else {
+                     // 2) do we have a matching user by email?
+                $user = $this->entityManager->getRepository(User::class)->findOneBy(['email' => $email]);
+
+                // If it still doesn't exist, you need to create a new one
+            // Here comes the custom logic of the creation of your user
+            if (!$user) {
+
+                // e.g. This is just an example, it depends of your user entity, so be sure to modify this
+                /** @var User $user */
+                $user = new User();
+                $user->setLastname($lastname["name"]);
+                $user->setPassword(null);
+                $user->setEmail($email);
+            }
                 }
 
-                // 2) do we have a matching user by email?
-                $user = $this->entityManager->getRepository(User::class)->findOneBy(['email' => $email]);
+               
 
                 // 3) Maybe you just want to "register" them by creating
                 // a User object
