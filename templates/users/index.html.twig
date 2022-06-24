@@ -7,8 +7,8 @@
     <div class="row flex-nowrap">
         <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-white rounded-end">
             <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-dark min-vh-100">
-                <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-black text-decoration-none">
-                    <span class="fs-5 d-none d-sm-inline">Profile</span>
+                <a class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-black text-decoration-none">
+                    <span class="fs-5 d-none d-sm-inline arvos">Profile</span>
                 </a>
                 <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
                     <li>
@@ -25,20 +25,53 @@
             </div>
         </div>
         <div class="col py-3">
-            <h1>Bonjour {{app.user.firstname}}.</h1>
-            <div class="container-fluid border rounded bg-white">
-                <div class="">
-                    <h2>INFORMATION</h2>
-                    <p>Nom : {{ app.user.lastname }}</p>
-                    <p>Prénom : {{ app.user.firstname }}</p>
-                    <p>E-mail : {{ app.user.email }}</p>
-                    <p>Numéro : {{ app.user.phone }}</p>
-                    <p>Genre : {{app.user.genre}}</p>
-                   
+            <h1 class="arvos">Bonjour {{app.user.firstname}}.</h1>
+            <div class="card-body bg-white rounded shadow p-3 mb-5 bg-body rounded">
+                <div class="row">
+                  <div class="col-sm-3">
+                    <p class="mb-0">Nom</p>
+                  </div>
+                  <div class="col-sm-9">
+                    <p class="text-muted mb-0">{{app.user.lastname}}</p>
+                  </div>
                 </div>
-
-            </div>
-
+                <hr>
+                <div class="row">
+                  <div class="col-sm-3">
+                    <p class="mb-0">Prenom</p>
+                  </div>
+                  <div class="col-sm-9">
+                    <p class="text-muted mb-0">{{app.user.firstname}}</p>
+                  </div>
+                </div>
+                <hr>
+                <div class="row">
+                  <div class="col-sm-3">
+                    <p class="mb-0">Email</p>
+                  </div>
+                  <div class="col-sm-9">
+                    <p class="text-muted mb-0">{{app.user.email}}</p>
+                  </div>
+                </div>
+                <hr>
+                <div class="row">
+                  <div class="col-sm-3">
+                    <p class="mb-0">Téléphone</p>
+                  </div>
+                  <div class="col-sm-9">
+                    <p class="text-muted mb-0">{{app.user.phone}}</p>
+                  </div>
+                </div>
+                <hr>
+                <div class="row">
+                  <div class="col-sm-3">
+                    <p class="mb-0">Genre</p>
+                  </div>
+                  <div class="col-sm-9">
+                    <p class="text-muted mb-0">{{app.user.genre}}</p>
+                  </div>
+                </div>
+              </div>
         </div>
     </div>
 </div>

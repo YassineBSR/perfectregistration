@@ -7,7 +7,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\DateField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
-use Symfony\Component\Form\Extension\Core\Type\PasswordType;
+
 
 class UserCrudController extends AbstractCrudController
 {
@@ -24,9 +24,10 @@ class UserCrudController extends AbstractCrudController
         yield TextField::new('Lastname');
         yield TextField::new('Firstname');
         yield BooleanField::new('newsletter');
-        yield TextField::new('phone');
-        yield TextField::new('genre');
-        yield DateField::new('birthdate');
+        yield BooleanField::new('emailing');
+        yield TextField::new('phone')->hideOnIndex();
+        yield TextField::new('genre')->hideOnIndex();
+        yield DateField::new('birthdate')->hideOnIndex();
     
     }
     
