@@ -12,12 +12,12 @@
                 </a>
                 <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
                     <li>
-                        <a href="/users" class="nav-link px-0 align-middle">
+                        <a href="{{path('app_users')}}" class="nav-link px-0 align-middle">
                             <i class="fa-regular fa-user fa-lg"></i> <span class="ms-1 d-none d-sm-inline">Mon
                                 Compte</span></a>
                     </li>
                     <li>
-                        <a href="/users/newsletter" class="nav-link px-0 align-middle">
+                        <a href="{{path('app_users_newsletter')}}" class="nav-link px-0 align-middle">
                             <i class="fa-regular fa-envelope fa-lg"></i> <span
                                 class="ms-1 d-none d-sm-inline">Newsletter</span> </a>
                     </li>
@@ -72,6 +72,9 @@
                   </div>
                 </div>
               </div>
+              <button class="btn border border-3 rounded-pill float-right">
+                <a class="text-decoration-none text-white" href="{{path('app_users_edit')}}">Modifier</a>
+              </button>
         </div>
     </div>
 </div>

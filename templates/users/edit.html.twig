@@ -1,8 +1,54 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Edit Utilisateur{% endblock %}
+{% block title %}Perfect Registration - Modifier le profile{% endblock %}
 
 {% block body %}
-        <h1>Edit Utilisateur</h1>
+<div class="container-fluid">
+    <div class="row flex-nowrap">
+        <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-white rounded-end">
+            <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-dark min-vh-100">
+                <a class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-black text-decoration-none">
+                    <span class="fs-5 d-none d-sm-inline arvos">Profile</span>
+                </a>
+                <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+                    <li>
+                        <a href="{{path('app_users')}}" class="nav-link px-0 align-middle">
+                            <i class="fa-regular fa-user fa-lg"></i> <span class="ms-1 d-none d-sm-inline">Mon
+                                Compte</span></a>
+                    </li>
+                    <li>
+                        <a href="{{path('app_users_newsletter')}}" class="nav-link px-0 align-middle">
+                            <i class="fa-regular fa-envelope fa-lg"></i> <span
+                                class="ms-1 d-none d-sm-inline">Newsletter</span> </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col py-3">
+            <h1 class="arvos">Modifier votre profile</h1>
+            <div class="container bg-white border rounded">
+                {{ form_start(registrationForm) }}
+                {{ form_row(registrationForm.lastname,{
+                    label: 'Nom',
+                }   
+                    )}}
+                {{ form_row(registrationForm.firstname,{
+                    label: 'Prenom',
+                }  )}}
+                {{ form_row(registrationForm.phone,{
+                    label: 'Téléphone',
+                }  )}}
+                {{ form_row(registrationForm.birthdate,{
+                    label: 'Anniversaire',
+                }  )}}
+                <div class="d-grid gap-2 col-6 mx-auto">
+                    <button type="submit" class="btn border border-3 rounded-pill">Enregistrer</button>
+                </div>
+                {{ form_end(registrationForm) }}
+           
+            </div>
 
+        </div>
+    </div>
+</div>
 {% endblock %}

@@ -12,12 +12,12 @@
                 </a>
                 <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
                     <li>
-                        <a href="/users" class="nav-link px-0 align-middle">
+                        <a href="{{path('app_users')}}" class="nav-link px-0 align-middle">
                             <i class="fa-regular fa-user fa-lg"></i> <span class="ms-1 d-none d-sm-inline">Mon
                                 Compte</span></a>
                     </li>
                     <li>
-                        <a href="/users/newsletter" class="nav-link px-0 align-middle">
+                        <a href="{{path('app_users_newsletter')}}" class="nav-link px-0 align-middle">
                             <i class="fa-regular fa-envelope fa-lg"></i> <span
                                 class="ms-1 d-none d-sm-inline">Newsletter</span> </a>
                     </li>
@@ -25,7 +25,33 @@
             </div>
         </div>
         <div class="col py-3">
-            
+            <h1 class="arvos">Newsletter</h1>
+            <div class="container bg-white border rounded d-flex justify-content-center">
+                {{ form_start(registrationForm) }}
+                <div class="mt-4">
+                    {{ form_row(registrationForm.newsletter,{
+                     label: 'Souhaitez vous activer les newsletters.',
+                type: 'newsletter',
+                row_attr: {
+                    class: 'form-switch h5'
+                }  
+                })}}
+
+                </div>
+                <div class="mb-4">
+                    {{ form_row(registrationForm.emailing,{
+                    label: 'Souhaiter vous recevoir des emails promotionnels',
+                    row_attr: {
+                        class: 'form-switch h5'
+                    }  
+                } )}}
+                </div>
+                <div class="d-grid gap-2 col-6 mx-auto">
+                    <button type="submit" class="btn border border-3 rounded-pill">S'inscrire</button>
+                </div>
+                {{ form_end(registrationForm) }}
+            </div>
+
         </div>
     </div>
 </div>
