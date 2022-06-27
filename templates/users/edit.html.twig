@@ -28,10 +28,12 @@
             <h1 class="arvos">Modifier votre profile</h1>
             <div class="container bg-white border rounded">
                 {{ form_start(registrationForm) }}
-                {{ form_row(registrationForm.lastname,{
+                <div class="mt-4">
+                    {{ form_row(registrationForm.lastname,{
                     label: 'Nom',
                 }   
                     )}}
+                </div>
                 {{ form_row(registrationForm.firstname,{
                     label: 'Prenom',
                 }  )}}
@@ -41,7 +43,7 @@
                 {{ form_row(registrationForm.birthdate,{
                     label: 'Anniversaire',
                 }  )}}
-                <div class="d-grid gap-2 col-6 mx-auto">
+                <div class="d-grid gap-2 col-6 mx-auto mt-4 mb-4">
                     <button type="submit" class="btn border border-3 rounded-pill">Enregistrer</button>
                 </div>
                 {{ form_end(registrationForm) }}
