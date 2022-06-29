@@ -56,6 +56,9 @@
             "./config/packages/knpu_oauth2_client.yaml"
         ]
     },
+    "kreait/firebase-bundle": {
+        "version": "4.0.0"
+    },
     "phpunit/phpunit": {
         "version": "9.5",
         "recipe": {

@@ -13,6 +13,7 @@
         "doctrine/orm": "^2.12",
         "easycorp/easyadmin-bundle": "^4.3",
         "knpuniversity/oauth2-client-bundle": "^2.10",
+        "kreait/firebase-bundle": "^4.0",
         "league/oauth2-facebook": "^2.2",
         "league/oauth2-github": "^3.0",
         "league/oauth2-google": "^4.0",
