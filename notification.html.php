@@ -1,4 +1,4 @@
-<form method="post" action="send_notification.php">
+<form method="post" action="notification.html.php">
 Title<input type="text" name="title">
 Message<input type="text" name="message">
 <!--Icon path<input type="text" name="icon">-->
@@ -36,3 +36,5 @@ function sendNotification(){
     curl_close($ch);
 }
 sendNotification();
+
+?>
