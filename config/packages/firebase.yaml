@@ -1,0 +1,4 @@
+kreait_firebase:
+    projects:
+        my_project:
+            credentials: '%kernel.project_dir%/config/perfect-registration-fac73-firebase-adminsdk-noenx-6109097e94.json'

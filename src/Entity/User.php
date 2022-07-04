@@ -51,6 +51,9 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(type: 'boolean', nullable: true)]
     private $Emailing;
 
+    #[ORM\Column(type: 'string', length: 255, nullable: true)]
+    private $registration_ids;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -213,6 +216,18 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setEmailing(?bool $Emailing): self
     {
         $this->Emailing = $Emailing;
+
+        return $this;
+    }
+
+    public function getRegistrationIds(): ?string
+    {
+        return $this->registration_ids;
+    }
+
+    public function setRegistrationIds(?string $registration_ids): self
+    {
+        $this->registration_ids = $registration_ids;
 
         return $this;
     }

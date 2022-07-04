@@ -28,11 +28,69 @@
 <body>
     {% block body %}
 
-
-
-
-
     {% endblock %}
+    <p id="token"></p>
+<script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-messaging.js"></script>
+<script>
+    var firebaseConfig = {
+      apiKey: "AIzaSyCIMGV2_UKJL_FVMUXzBtZXslTTwpAOVEY",
+      authDomain: "perfect-registration-cbfda.firebaseapp.com",
+      projectId: "perfect-registration-cbfda",
+      storageBucket: "perfect-registration-cbfda.appspot.com",
+      messagingSenderId: "495348177232",
+      appId: "1:495348177232:web:41faaf2ab28d13070ef455",
+      measurementId: "G-HNEN5BHVCY"
+    };
+    firebase.initializeApp(firebaseConfig);
+    const messaging=firebase.messaging();
+
+    function IntitalizeFireBaseMessaging() {
+        messaging
+            .requestPermission()
+            .then(function () {
+                console.log("Notification Permission");
+                return messaging.getToken();
+            })
+            .then(function (token) {
+                console.log("Token : "+token);
+                document.getElementById("token").innerHTML=token;
+            })
+            .catch(function (reason) {
+                console.log(reason);
+            });
+    }
+
+    messaging.onMessage(function (payload) {
+        console.log(payload);
+        const notificationOption={
+            body:payload.notification.body,
+            icon:payload.notification.icon
+        };
+
+        if(Notification.permission==="granted"){
+            var notification=new Notification(payload.notification.title,notificationOption);
+
+            notification.onclick=function (ev) {
+                ev.preventDefault();
+                window.open(payload.notification.click_action,'_blank');
+                notification.close();
+            }
+        }
+
+    });
+    messaging.onTokenRefresh(function () {
+        messaging.getToken()
+            .then(function (newtoken) {
+                console.log("New Token : "+ newtoken);
+            })
+            .catch(function (reason) {
+                console.log(reason);
+				//alert(reason);
+            })
+    })
+    IntitalizeFireBaseMessaging();
+</script>
 
     <div class="bg-white">
         <footer class="py-3 my-4">
@@ -51,7 +109,6 @@
             <p class="text-center text-muted">© 2022 Perfect Registration, Inc</p>
         </footer>
     </div>
-
 </body>
 
 </html>
