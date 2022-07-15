@@ -61,8 +61,6 @@
             </div>
         </nav>
     </header>
-
-
     <div class="container card mb-3 shadow" >
         <h1>Envoie de notification</h1>
         <form method="post" action="notification.php">
@@ -77,8 +75,7 @@
             <div class="form mb-3">
                 <label for="link" class="form-label">Lien</label>
                 <input type="text" class="form-control" name="link">
-            </div>
-           
+            </div> 
             <div class="d-grid gap-2 col-6 mx-auto mt-3 mb-3">
                 <button type="submit" class="btn btn-primary">Envoyer</button>  
             </div>
@@ -95,7 +92,7 @@ function sendNotification(){
 require 'DbConnect.php';
 $db = new DbConnect;
 $conn = $db->connect();
-$stmt = $conn->prepare('SELECT * FROM tokens');
+$stmt = $conn->prepare('SELECT token FROM tokens');
 $stmt->execute();
 $tokens = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
