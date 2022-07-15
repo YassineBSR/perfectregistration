@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3306
--- Généré le : lun. 27 juin 2022 à 11:50
+-- Généré le : ven. 15 juil. 2022 à 08:13
 -- Version du serveur : 10.5.8-MariaDB-log
 -- Version de PHP : 8.1.3
 
@@ -56,7 +56,11 @@ INSERT INTO `doctrine_migration_versions` (`version`, `executed_at`, `execution_
 ('DoctrineMigrations\\Version20220620145155', '2022-06-20 14:52:01', 184),
 ('DoctrineMigrations\\Version20220621135601', '2022-06-21 13:56:05', 153),
 ('DoctrineMigrations\\Version20220623113402', '2022-06-23 11:34:22', 217),
-('DoctrineMigrations\\Version20220624082730', '2022-06-24 08:27:46', 131);
+('DoctrineMigrations\\Version20220624082730', '2022-06-24 08:27:46', 131),
+('DoctrineMigrations\\Version20220630135039', '2022-06-30 13:50:57', 166),
+('DoctrineMigrations\\Version20220701084652', '2022-07-01 08:46:59', 186),
+('DoctrineMigrations\\Version20220706075011', '2022-07-06 07:50:30', 281),
+('DoctrineMigrations\\Version20220713120341', '2022-07-13 12:04:04', 1402);
 
 -- --------------------------------------------------------
 
@@ -73,6 +77,25 @@ CREATE TABLE `messenger_messages` (
   `available_at` datetime NOT NULL,
   `delivered_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `tokens`
+--
+
+CREATE TABLE `tokens` (
+  `id` int(11) NOT NULL,
+  `token` varchar(300) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_date` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Déchargement des données de la table `tokens`
+--
+
+INSERT INTO `tokens` (`id`, `token`, `created_date`) VALUES
+(5, 'e84hy_q3SEcyqGMX7yw92r:APA91bFII1R7Y1e7CAkHKVTOzXJX5o-2DUPDCBDVkttwhvZ6MBZlpZRNFABN4WhCKPZxu-IXV7UPjkmDPDd0VjSo0TMl27jzzRaxbzJWxuXcO21kYYzsHhU46E6PqEEa9Y6-Yr7OFE2g', '2022-07-11');
 
 -- --------------------------------------------------------
 
@@ -101,8 +124,20 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`id`, `email`, `roles`, `password`, `lastname`, `firstname`, `birthdate`, `phone`, `genre`, `github_id`, `newsletter`, `emailing`) VALUES
 (14, 'Yassine60160@gmail.com', '[\"ROLE_ADMIN\"]', '$2y$13$9JQm79WoI0jiR2diV6TeGeuegE1UQG/dWMm53B8k.p9puJJ6Oh3XC', 'Admin', 'Yassine', '2001-01-11', '0768519194', 'Homme', NULL, 1, 1),
-(15, 'user@gmail.com', '[]', '$2y$13$ZhhXkcvnxLEcGaRp4fF5Iu4.RUiZGjGWuCeXzmKdEK3N/FCtqOs.a', 'user', 'user', '2022-06-08', NULL, 'Homme', NULL, 1, 1),
-(16, 'azerty@gmail.com', '[]', '$2y$13$/nj9WBDRKUHeHzxCUSsTwuE0IVevpcfTeSFGaKfkxZAR3ze0WecMe', 'Basrire', 'Yassine', '2022-06-01', '0768519194', 'Homme', NULL, 1, NULL);
+(15, 'user@gmail.com', '[]', '$2y$13$ZhhXkcvnxLEcGaRp4fF5Iu4.RUiZGjGWuCeXzmKdEK3N/FCtqOs.a', 'user', 'user', '2022-06-08', NULL, 'Homme', NULL, 0, 1),
+(16, 'azerty@gmail.com', '[]', '$2y$13$/nj9WBDRKUHeHzxCUSsTwuE0IVevpcfTeSFGaKfkxZAR3ze0WecMe', 'Basrire', 'Yassine', '2022-06-01', '0768519194', 'Homme', NULL, 1, NULL),
+(17, 'Yassine@gmail.com', '[]', '$2y$13$vxlpWmiZ7OnfnQT3vjiSG.kRKo2APMDIicisiJS40ChD7td9PsuVu', 'test', 'user', '2014-06-11', '2345678976', 'Homme', NULL, NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `user_tokens`
+--
+
+CREATE TABLE `user_tokens` (
+  `user_id` int(11) NOT NULL,
+  `tokens_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Index pour les tables déchargées
@@ -124,11 +159,25 @@ ALTER TABLE `messenger_messages`
   ADD KEY `IDX_75EA56E016BA31DB` (`delivered_at`);
 
 --
+-- Index pour la table `tokens`
+--
+ALTER TABLE `tokens`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Index pour la table `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `UNIQ_8D93D649E7927C74` (`email`);
+
+--
+-- Index pour la table `user_tokens`
+--
+ALTER TABLE `user_tokens`
+  ADD PRIMARY KEY (`user_id`,`tokens_id`),
+  ADD KEY `IDX_CF080AB3A76ED395` (`user_id`),
+  ADD KEY `IDX_CF080AB3558D68EA` (`tokens_id`);
 
 --
 -- AUTO_INCREMENT pour les tables déchargées
@@ -141,10 +190,27 @@ ALTER TABLE `messenger_messages`
   MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT pour la table `tokens`
+--
+ALTER TABLE `tokens`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
 -- AUTO_INCREMENT pour la table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+
+--
+-- Contraintes pour les tables déchargées
+--
+
+--
+-- Contraintes pour la table `user_tokens`
+--
+ALTER TABLE `user_tokens`
+  ADD CONSTRAINT `FK_CF080AB3558D68EA` FOREIGN KEY (`tokens_id`) REFERENCES `tokens` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `FK_CF080AB3A76ED395` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

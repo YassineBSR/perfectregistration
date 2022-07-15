@@ -38,7 +38,7 @@ class RegistrationFormType extends AbstractType
             ->add('email')
             ->add('phone')
             ->add('birthdate', DateType::class, [
-                'attr' => ['class' => 'form-control js-datepicker'],
+                'input' => 'datetime_immutable',
                 'widget' => 'single_text',
                 
             ])

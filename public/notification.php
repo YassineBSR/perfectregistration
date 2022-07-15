@@ -16,10 +16,6 @@
     <style>
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
-@import '~@fortawesome/fontawesome-free/css/fontawesome.css';
-@import '~@fortawesome/fontawesome-free/css/regular.css';
-@import '~@fortawesome/fontawesome-free/css/solid.css';
-@import '~@fortawesome/fontawesome-free/css/brands.css';
 @import url('https://fonts.googleapis.com/css2?family=Arvo:wght@400;700&display=swap');
         * {
             font-family: 'Montserrat', sans-serif;
@@ -43,7 +39,7 @@
 .card{
     border-radius: 20px;
 }
-    </style>
+</style>
 </head>
 
 <body>
@@ -82,6 +78,7 @@
                 <label for="link" class="form-label">Lien</label>
                 <input type="text" class="form-control" name="link">
             </div>
+           
             <div class="d-grid gap-2 col-6 mx-auto mt-3 mb-3">
                 <button type="submit" class="btn btn-primary">Envoyer</button>  
             </div>
