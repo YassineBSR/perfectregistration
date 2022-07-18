@@ -12,9 +12,9 @@
           {% if app.user %}
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              {{ app.user.firstname }}
+              <i class="fa-solid fa-2xl fa-circle-user"></i>
             </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+            <ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="navbarScrollingDropdown">
               <li><a class="dropdown-item" href="{{path('app_users')}}">Mon Profile</a></li>
               <li><hr class="dropdown-divider"></li>
               <li><a class="dropdown-item" href="{{ path('app_logout') }}">Deconnexion</a></li>
