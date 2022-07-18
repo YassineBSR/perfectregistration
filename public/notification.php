@@ -92,7 +92,7 @@ function sendNotification(){
 require 'DbConnect.php';
 $db = new DbConnect;
 $conn = $db->connect();
-$stmt = $conn->prepare('SELECT token FROM tokens');
+$stmt = $conn->prepare('SELECT * FROM tokens');
 $stmt->execute();
 $tokens = $stmt->fetchAll(PDO::FETCH_ASSOC);
 

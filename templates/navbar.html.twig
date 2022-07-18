@@ -1,5 +1,5 @@
   <nav class="navbar navbar-expand-lg navbar-light bg-white shadow p-3 mb-5 ">
-    <div class="container-fluid">
+    <div class="container">
       <h2><a class="navbar-brand title" href={{path("app_home")}}>Perfect Registration</a></h2>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
         aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -10,8 +10,16 @@
           <a class="nav-link" href={{path("app_home")}}>Home</a>
 
           {% if app.user %}
-          <a class="nav-link" href="{{path('app_users')}}">{{ app.user.firstname }}</a>
-          <a class="nav-link" href="{{ path('app_logout') }}">Deconnexion</a>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              {{ app.user.firstname }}
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+              <li><a class="dropdown-item" href="{{path('app_users')}}">Mon Profile</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="{{ path('app_logout') }}">Deconnexion</a></li>
+            </ul>
+          </li>
           {% else %}
           <a class="nav-link" href={{path("app_login")}}>Connection</a>
           <a class="nav-link" href={{path("app_register")}}>Inscription</a>
