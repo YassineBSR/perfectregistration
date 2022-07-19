@@ -3,8 +3,6 @@
 namespace App\Entity;
 
 use App\Repository\TokensRepository;
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: TokensRepository::class)]
@@ -21,13 +19,6 @@ class Tokens
     #[ORM\Column(type: 'date')]
     private $created_date;
 
-    #[ORM\ManyToMany(targetEntity: User::class, mappedBy: 'tokens')]
-    private $users;
-
-    public function __construct()
-    {
-        $this->users = new ArrayCollection();
-    }
 
     public function getId(): ?int
     {
@@ -58,30 +49,4 @@ class Tokens
         return $this;
     }
 
-    /**
-     * @return Collection<int, User>
-     */
-    public function getUsers(): Collection
-    {
-        return $this->users;
-    }
-
-    public function addUser(User $user): self
-    {
-        if (!$this->users->contains($user)) {
-            $this->users[] = $user;
-            $user->addToken($this);
-        }
-
-        return $this;
-    }
-
-    public function removeUser(User $user): self
-    {
-        if ($this->users->removeElement($user)) {
-            $user->removeToken($this);
-        }
-
-        return $this;
-    }
 }
