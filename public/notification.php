@@ -22,19 +22,18 @@
         }
 
         body {
-            background: linear-gradient(90deg, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);;
+            background: linear-gradient(90deg, rgba(83,46,116,1) 0%, rgba(96,59,128,1) 100%);; 
         }
         .title{
     font-family: 'Pacifico', cursive !important; 
    
     background-clip: text;
     color: transparent;
-    background: linear-gradient(90deg, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+   
     font-size: xx-large;
     
 }
+
 
 .card{
     border-radius: 20px;
@@ -44,17 +43,18 @@
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-white shadow p-3 mb-5 ">
+        <nav class="navbar navbar-expand-lg navbar-dark border-bottom border-white border-5 p-3 mb-5 ">
             <div class="container-fluid">
-                <h2><a class="navbar-brand title" href="/">Perfect Registration</a></h2>
+                <h2><a class="navbar-brand title" href="/">Best Deals</a></h2>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
                     aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
-                </button>
+                </button> 
+                <a class="nav-link text-white" href="/">Home</a>
                 <div class="collapse navbar-collapse flex-row-reverse" id="navbarNavAltMarkup">
                     <nav class="navbar-nav">
-                        <a class="nav-link" href="/">Home</a>
+                       
                         <a class="nav-link" href="/admin">Retour panneau admin</a>
                     </nav>
                 </div>
