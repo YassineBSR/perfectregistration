@@ -1,57 +1,65 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Perfect Registration - Home{% endblock %}
+{% block title %}Best Deals - Home{% endblock %}
 
 {% block body %}
 <div class="container mb-4">
-    <div class="row text-center">
-      {% if app.user %}
-      <div class=" text-center mb-4">
-        <h1 class="big">Bonjour {{ app.user.firstname }},<br> Passer une bonne journée !</h1>
+  <div class="row text-center">
+    {% if app.user %}
+    <div class=" text-center mb-4">
+      <h1 class="big">Bonjour {{ app.user.firstname }},<br> Passer une bonne journée !</h1>
 
     </div>
-      {% else %}
-     <div class=" text-center mb-4">
-            <h1 class="big">Le meilleur formulaire <br> d'inscription qui existe.</h1>
-            <h2 class="mini">Venez tester et vous verrez.</h2>
-        </div>
-        <div class="d-grid gap-2 col-3 mx-auto">
-            <button type="submit" class="btn border border-3 rounded-pill"><a class="text-decoration-none text-white" href={{path("app_register")}}>S'inscrire gratuitement</a></button>
-        </div>
-  
-      {% endif %}
-      </div>
-    </nav>
-       
-</div>
-<div class="container">
+    {% else %}
+    <div class=" text-center mb-4">
+      <h1 class="big">Obtenez les meuilleurs <br> bons plan avec Best Deals.</h1>
+      <h2 class="mini">Venez tester et vous verrez.</h2>
+    </div>
+    <div class="d-grid gap-2 col-3 mx-auto">
+      <a class="nav-link" href={{path("app_register")}}>
+        <button type="button" class="btn btn-lg btn-outline-dark text-dark bg-white border-3 rounded-pill">S'inscrire gratuitement</button></a>
+    </div>
 
-    <div class="row row-cols-1 row-cols-md-3 g-4">
-  <div class="col">
-    <div class="card a">
-      <div class="card-body ">
-        <h4 class="card-title text-center arvos ">Base de données</h4>
-        <p class="card-text">Une base de données est un ensemble d'informations qui est organisé de manière à être facilement accessible, géré et mis à jour. Elle est utilisée par les organisations comme méthode de stockage, de gestion et de récupération de l'informations.</p>
-      </div>
-    </div>
+    {% endif %}
   </div>
-  <div class="col">
-    <div class="card">
-      <div class="card-body">
-        <h4 class="card-title text-center arvos">Formulaire complet</h4>
-        <p class="card-text">Les formulaires d’inscription représentent un moyen accessible et efficace de recueillir des informations importantes sur vos visiteurs.</p>
-      </div>
-    </div>
-  </div>
-  <div class="col">
-    <div class="card">
-      <div class="card-body">
-        <h4 class="card-title text-center arvos">Authentification via reseau sociaux</h4>
-        <p class="card-text">De plus en plus de site proposent une authentification via les réseaux sociaux, dans le but de faciliter et rendre plus rapide la phase d'inscription.</p>
-      </div>
-    </div>
-  </div>
+  </nav>
+
 </div>
-</div>
+<section class="bg-white">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6 mt-5">
+        <h2 class="fw-bolder fs-1 ">Retrouver tous les bons plans d'Internet au même endroit.</h2>
+      </div>
+      <div class="col-sm-6 mt-5">
+        <div>
+          <div>
+            <h4 class="fw-bolder">Faire des économies sur Internet en utilisant un code promo</h4>
+          </div>
+          <div>
+            <p>Il est désormais possible d'acheter n'importe quel article depuis son canapé ; que cela soit sur son mobile ou son portable il est très facile de commander un produit 
+              et se faire livrer à domicile. L'essor du ecommerce favorise cette révolution. Si vous êtes un acheteur sur Internet vous devez savoir qu'il est assez facile de comparer les prix afin d'être certain d'acheter au meilleur prix. 
+              Cette tâche de comparaison de prix est parfois chronophage, si vous voulez être certain d'acheter au meilleur, faites-nous confiance, utiliser un code promo </p>
+          </div>
+        </div>
+        
+        <div class="mt-5">
+          <div>
+            <h4 class="fw-bolder">Pourquoi utiliser un code promo ?</h4>
+          </div>
+          <div>
+            <p>l n'y a pas de moyen plus rapide et plus facile d'économiser de l'argent tout en se faisant plaisir qu'avec un code promo ! 
+              Vous avez besoin d'une autre paire de chaussures, même si votre placard est déjà plein ? Vous voulez un nouvel aspirateur ? 
+              N'est-il pas temps de réserver vos prochaines vacances ? Ou peut-être souhaitez-vous faire plaisir à vos amis et à votre famille ? Profitez d'une variété de réductions
+               sur plus de 3000 boutiques en ligne : des économies importantes jusqu'à plusieurs dizaines d'euros, la livraison gratuite, des cadeaux gratuits, d'excellentes offres... Notre service est totalement gratuit,
+                vous n'avez pas besoin de vous identifier pour utiliser nos codes promos.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
 
 {% endblock %}

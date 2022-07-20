@@ -10,7 +10,7 @@
 }
 
 body{
-  background: linear-gradient(90deg, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);;
+  background: linear-gradient(90deg, rgba(83,46,116,1) 0%, rgba(96,59,128,1) 100%);; 
 }
 
 .title{
@@ -18,20 +18,11 @@ body{
    
     background-clip: text;
     color: transparent;
-    background: linear-gradient(90deg, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+   
     font-size: xx-large;
     
 }
-button{
-  background-clip: border-box;
-  color: white;
-    background: linear-gradient(90deg, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
-    -webkit-background-clip: border-box;
-    -webkit-text-fill-color:white;
-    font-size:large;
-}
+
 
 .card{
     border-radius: 20px;
@@ -80,11 +71,11 @@ button{
 }
 .arvos{
   font-family: 'Arvo', serif !important;
-  color: #124265;
+  color: white;
   font-weight: bold;
 }
 .mini{
-  color: #5e5e5e;
+  color: whitesmoke;
   margin: 10px 0 0 0;
   font-size: 22px;
 }
@@ -93,7 +84,7 @@ button{
   font-size: 50px;
   font-weight: 700;
   line-height: 72px;
-  color: #124265;
+  color: white;
   font-family: 'Arvo', serif !important;
 }
 .text-center{

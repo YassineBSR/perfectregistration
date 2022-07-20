@@ -1,13 +1,15 @@
-  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow p-3 mb-5 ">
+  <nav class="navbar navbar-expand-lg navbar-dark border-bottom border-white border-5 p-3 mb-5 ">
     <div class="container">
-      <h2><a class="navbar-brand title" href={{path("app_home")}}>Perfect Registration</a></h2>
+      <h2><a class="navbar-brand title" href={{path("app_home")}}>Best Deals</a></h2>
+      <a class="nav-link text-white" href={{path("app_home")}}>Home</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
         aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
-      </button>
+      </button> 
+      
       <div class="collapse navbar-collapse flex-row-reverse" id="navbarNavAltMarkup">
         <nav class="navbar-nav">
-          <a class="nav-link" href={{path("app_home")}}>Home</a>
+         
 
           {% if app.user %}
           <li class="nav-item dropdown">
@@ -21,8 +23,7 @@
             </ul>
           </li>
           {% else %}
-          <a class="nav-link" href={{path("app_login")}}>Connection</a>
-          <a class="nav-link" href={{path("app_register")}}>Inscription</a>
+          <a class="nav-link text-white" href={{path("app_login")}}><button type="button" class="btn btn-outline-light rounded-pill">Se connecter</button></a>
           {% endif %}
         </nav>
       </div>
