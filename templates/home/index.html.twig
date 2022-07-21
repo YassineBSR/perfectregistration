@@ -8,7 +8,6 @@
     {% if app.user %}
     <div class=" text-center mb-4">
       <h1 class="big">Bonjour {{ app.user.firstname }},<br> Passer une bonne journée !</h1>
-
     </div>
     {% else %}
     <div class=" text-center mb-4">
@@ -17,7 +16,7 @@
     </div>
     <div class="d-grid gap-2 col-3 mx-auto mb-5">
       <a class="nav-link" href={{path("app_register")}}>
-        <button type="button" class="btn btn-lg btn-outline-dark text-dark bg-white border-3 rounded-pill">S'inscrire gratuitement</button></a>
+        <button type="button" class="btn btn-lg text-dark bg-white rounded-pill">S'inscrire gratuitement</button></a>
     </div>
 
     {% endif %}
@@ -41,18 +40,39 @@
               Cette tâche de comparaison de prix est parfois chronophage, si vous voulez être certain d'acheter au meilleur, faites-nous confiance, utiliser un code promo </p>
           </div>
         </div>
-        
         <div class="mt-5">
           <div>
             <h4 class="fw-bolder">Pourquoi utiliser un code promo ?</h4>
           </div>
           <div class="mt-4">
-            <p>l n'y a pas de moyen plus rapide et plus facile d'économiser de l'argent tout en se faisant plaisir qu'avec un code promo ! 
+            <p>Il n'y a pas de moyen plus rapide et plus facile d'économiser de l'argent tout en se faisant plaisir qu'avec un code promo ! 
               Vous avez besoin d'une autre paire de chaussures, même si votre placard est déjà plein ? Vous voulez un nouvel aspirateur ? 
               N'est-il pas temps de réserver vos prochaines vacances ? Ou peut-être souhaitez-vous faire plaisir à vos amis et à votre famille ? Profitez d'une variété de réductions
                sur plus de 3000 boutiques en ligne !</p>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 text-center">
+  <h3 class="text-center fw-bolder">Des bon plans</h3>
+  <img class="" src="{{ asset('images/deal.png') }}" alt="" width="250" height="auto">
+      </div>
+      <div class="col-md-6 text-center">
+  <h3 class="text-center fw-bolder">Code Promo</h3>
+  <img src="{{ asset('images/coupon.png') }}" alt="" width="250" height="auto">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6 text-center">
+  <h3 class="text-center fw-bolder">Offre Spécial</h3>
+  <img src="{{ asset('images/hot-deal.png') }}" alt="" width="250" height="auto">
+      </div>
+      <div class="col-md-6 text-center">
+  <h3 class="text-center fw-bolder">Notification</h3>
+  <img src="{{ asset('images/notification.png') }}" alt="" width="250" height="auto">
       </div>
     </div>
   </div>
