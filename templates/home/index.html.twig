@@ -7,16 +7,17 @@
   <div class="row text-center">
     {% if app.user %}
     <div class=" text-center mb-4">
-      <h1 class="big">Bonjour {{ app.user.firstname }},<br> Passer une bonne journée !</h1>
+      <h1 class="big fw-bolder display-5">Bonjour {{ app.user.firstname }},<br> Passer une bonne journée !</h1>
     </div>
     {% else %}
     <div class=" text-center mb-4">
-      <h1 class="big mb-4">Obtenez les meuilleurs <br> bons plan avec Best Deals.</h1>
+      <h1 class="big fw-bolder display-6 mb-4">Obtenez les meuilleurs <br> bons plan avec Best Deals.</h1>
       <h2 class="mini">Venez tester et vous verrez.</h2>
     </div>
-    <div class="d-grid gap-2 col-3 mx-auto mb-5">
+    <div class=" text-center  mb-5">
       <a class="nav-link" href={{path("app_register")}}>
-        <button type="button" class="btn btn-lg text-dark bg-white rounded-pill">S'inscrire gratuitement</button></a>
+        <button type="button" class="btn btn-lg text-dark bg-white rounded-pill">S'inscrire <br> gratuitement</button>
+      </a>
     </div>
 
     {% endif %}
@@ -27,7 +28,7 @@
   <div class="container">
     <div class="row">
       <div class="col-sm-6 mt-5">
-        <h2 class="fw-bolder fs-1 ">Retrouver tous les bons plans d'Internet au même endroit.</h2>
+        <h1 class="fw-bolder">Retrouver tous les bons plans d'Internet au même endroit.</h1>
       </div>
       <div class="col-sm-6 mt-5">
         <div>
@@ -35,9 +36,14 @@
             <h4 class="fw-bolder">Faire des économies sur Internet en utilisant un code promo</h4>
           </div>
           <div class="mt-4">
-            <p>Il est désormais possible d'acheter n'importe quel article depuis son canapé ; que cela soit sur son mobile ou son portable il est très facile de commander un produit 
-              et se faire livrer à domicile. L'essor du ecommerce favorise cette révolution. Si vous êtes un acheteur sur Internet vous devez savoir qu'il est assez facile de comparer les prix afin d'être certain d'acheter au meilleur prix. 
-              Cette tâche de comparaison de prix est parfois chronophage, si vous voulez être certain d'acheter au meilleur, faites-nous confiance, utiliser un code promo </p>
+            <p class="">Il est désormais possible d'acheter n'importe quel article depuis son canapé ; que cela soit sur
+              son
+              mobile ou son portable il est très facile de commander un produit
+              et se faire livrer à domicile. L'essor du ecommerce favorise cette révolution. Si vous êtes un acheteur
+              sur Internet vous devez savoir qu'il est assez facile de comparer les prix afin d'être certain d'acheter
+              au meilleur prix.
+              Cette tâche de comparaison de prix est parfois chronophage, si vous voulez être certain d'acheter au
+              meilleur, faites-nous confiance, utiliser un code promo. </p>
           </div>
         </div>
         <div class="mt-5">
@@ -45,35 +51,65 @@
             <h4 class="fw-bolder">Pourquoi utiliser un code promo ?</h4>
           </div>
           <div class="mt-4">
-            <p>Il n'y a pas de moyen plus rapide et plus facile d'économiser de l'argent tout en se faisant plaisir qu'avec un code promo ! 
-              Vous avez besoin d'une autre paire de chaussures, même si votre placard est déjà plein ? Vous voulez un nouvel aspirateur ? 
-              N'est-il pas temps de réserver vos prochaines vacances ? Ou peut-être souhaitez-vous faire plaisir à vos amis et à votre famille ? Profitez d'une variété de réductions
-               sur plus de 3000 boutiques en ligne !</p>
+            <p>Il n'y a pas de moyen plus rapide et plus facile d'économiser de l'argent tout en se faisant plaisir
+              qu'avec un code promo !
+              Vous avez besoin d'une autre paire de chaussures, même si votre placard est déjà plein ? Vous voulez un
+              nouvel aspirateur ?
+              N'est-il pas temps de réserver vos prochaines vacances ? Ou peut-être souhaitez-vous faire plaisir à vos
+              amis et à votre famille ? Profitez d'une variété de réductions
+              sur plus de 3000 boutiques en ligne !</p>
           </div>
         </div>
       </div>
     </div>
   </div>
   <div class="container mt-5">
+    <div class="text-center mb-5">
+      <h1 class="fw-bolder">Best Deals c'est quoi ?</h1>
+    </div>
     <div class="row">
       <div class="col-md-6 text-center">
-  <h3 class="text-center fw-bolder mb-4">Des bon plans</h3>
-  <img class="" src="{{ asset('images/deal.png') }}" alt="" width="250" height="auto">
+        <img class="" src="{{ asset('images/deal.png') }}" alt="" width="150" height="auto">
+        <h3 class="text-center fw-bolder mb-4">Des bon plans</h3>
+        <p>Des bons plans pour vous faire <br> économiser le plus d'argents.</p>
+
+
       </div>
       <div class="col-md-6 text-center">
-  <h3 class="text-center fw-bolder">Code Promo</h3>
-  <img src="{{ asset('images/coupon.png') }}" alt="" width="250" height="auto">
+        <img src="{{ asset('images/coupon.png') }}" alt="" width="150" height="auto">
+        <h3 class="text-center fw-bolder">Code Promo</h3>
+        <p>Des codes promo chers <br> des milliers d'enseignes.</p>
+
+
       </div>
     </div>
     <div class="row mt-5">
       <div class="col-md-6 text-center">
-  <h3 class="text-center fw-bolder mb-4">Offre Spécial</h3>
-  <img src="{{ asset('images/hot-deal.png') }}" alt="" width="250" height="auto">
+        <img src="{{ asset('images/hot-deal.png') }}" alt="" width="150" height="auto">
+        <h3 class="text-center fw-bolder mb-4">Offre Spécial</h3>
+        <p>Des offres spéciales avec des prix <br> battant tout concurrence.</p>
+
+
       </div>
       <div class="col-md-6 text-center">
-  <h3 class="text-center fw-bolder mb-4">Notification</h3>
-  <img src="{{ asset('images/notification.png') }}" alt="" width="250" height="auto">
+        <img src="{{ asset('images/notification.png') }}" alt="" width="150" height="auto">
+        <h3 class="text-center fw-bolder">Notification</h3>
+        <p>Soyez toujours averti des offres <br> en activent les notifications !</p>
       </div>
+    </div>
+  </div>
+
+</section>
+<div>
+  <img src="{{asset('images/wavesOpacity.svg')}}" alt="">
+</div>
+<section class="overflow-hidden">
+  <div class="row">
+    <div class="col-md-6">
+      1 of 2
+    </div>
+    <div class="col-md-6 text-center">
+      <img src="{{asset('images/1524.png')}}" class="img-fluid" width="250" height="auto" alt="">
     </div>
   </div>
 </section>

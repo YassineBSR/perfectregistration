@@ -80,13 +80,11 @@ body{
   font-size: 22px;
 }
 .big{
-  margin: 0;
-  font-size: 50px;
-  font-weight: 700;
-  line-height: 72px;
   color: white;
   font-family: 'Arvo', serif !important;
 }
 .text-center{
   text-align: center !important;
 }
+
+
