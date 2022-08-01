@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Best Deals - {{ annonces.title }}{% endblock %}
+
+{% block body %}
+<section>
+    <div class="container bg-white border rounded">
+        <div class="row ">
+            <div class="col-md-4 md-5">
+                <img src="{{ annonces.imageName ? vich_uploader_asset(annonces) : asset('uploads/placeholder.jpg') }}"
+                    class="img-fluid" />
+            </div>
+            <div class="col-md-8">
+                <h2 class="fw-bolder mt-2 mb-4">{{ annonces.title }}</h2>
+                <h2 class="text-danger fw-bold mb-4">{{ annonces.price }} €</h2>
+                <button type="button" class="btn btn-primary btn-lg mb-4" href="{{ annonces.link }}">Voir le Deal <i class="fa-solid fa-arrow-up-right-from-square"></i></button>
+                <p>Partagé par {{ annonces.user.firstname }}</p>
+            </div>
+            <h5 class="border border-rounded ">{{ annonces.createat|date('d/m/Y') }}</h5>
+            <p>{{ annonces.description }}</p>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

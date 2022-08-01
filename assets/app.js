@@ -10,7 +10,7 @@ import './styles/app.css';
 
 // start the Stimulus application
 import './bootstrap';
-
+import 'animate.css';
 // app.js
 
 const $ = require('jquery');

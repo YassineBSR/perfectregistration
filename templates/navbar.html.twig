@@ -1,29 +1,37 @@
   <nav class="navbar navbar-expand-lg navbar-dark border-bottom border-white border-5 p-3 mb-5 ">
     <div class="container-fluid">
-      <h2><a class="navbar-brand title" href={{path("app_home")}}>Best Deals</a></h2>
-      <a class="nav-link text-white" href={{path("app_home")}}>Home</a>
+      <h2><a class="navbar-brand title fs-2" href={{path("app_home")}}>Best Deals</a></h2>
+      <a class="nav-link text-white" href={{path("app_home")}}><i class="fa-solid fa-house fa-lg d-lg-none"></i><span class="ms-1 d-none d-sm-inline">Home</span></a>
+      <a class="nav-link text-white" href={{path("app_annonces")}}><i class="fa-solid fa-tags fa-lg d-lg-none"></i><span class="ms-1 d-none d-sm-inline">Deals</span></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
         aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
-      </button> 
-      
+      </button>
+
       <div class="collapse navbar-collapse flex-row-reverse" id="navbarNavAltMarkup">
         <nav class="navbar-nav">
-         
-
+          <li class="nav-item dropdown"></li>
           {% if app.user %}
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              <i class="fa-solid fa-2xl fa-circle-user"></i>
-            </a>
-            <ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="navbarScrollingDropdown">
-              <li><a class="dropdown-item" href="{{path('app_users')}}">Mon Profile</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="{{ path('app_logout') }}">Deconnexion</a></li>
-            </ul>
+          <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="navbarScrollingDropdown" role="button"
+            data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fa-solid fa-2xl fa-circle-user"></i>
+          </a>
+          <a class="nav-link text-white" href={{path("app_annonces_create")}}><button type="button"
+            class="btn btn-outline-light rounded-pill">+ Poster...</button></a>
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarScrollingDropdown">
+            <li><a class="dropdown-item" href="{{path('app_users')}}">Mon Profile</a></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li><a class="dropdown-item" href="{{ path('app_logout') }}">Deconnexion</a></li>
+          </ul>
           </li>
           {% else %}
-          <a class="nav-link text-white" href={{path("app_login")}}><button type="button" class="btn btn-outline-light rounded-pill">Se connecter</button></a>
+          <a class="nav-link text-white" href={{path("app_login")}}><button type="button"
+              class="btn btn-outline-light rounded-pill">Se connecter</button></a>
+          <a class="nav-link text-white" href={{path("app_annonces_create")}}><button type="button"
+          class="btn btn-outline-light rounded-pill">+ Poster...</button></a>
+
           {% endif %}
         </nav>
       </div>
