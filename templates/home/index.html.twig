@@ -3,14 +3,14 @@
 {% block title %}Best Deals - Home{% endblock %}
 
 {% block body %}
-<div class="container mb-4">
+<div class="container mb-4" data-aos="fade-up">
   <div class="row text-center">
     {% if app.user %}
     <div class=" text-center mb-4">
       <h1 class="big fw-bolder display-5">Bonjour {{ app.user.firstname }},<br> Passer une bonne journée !</h1>
     </div>
     {% else %}
-    <div class=" text-center mb-4">
+    <div class=" text-center mb-4" >
       <h1 class="big fw-bolder display-6 mb-4">Obtenez les meilleurs <br> bons plan avec Best Deals.</h1>
       <h2 class="mini">Venez tester et vous verrez.</h2>
     </div>
@@ -27,11 +27,11 @@
 <section class="bg-white">
   <div class="container">
     <div class="row">
-      <div class="col-sm-6 mt-5">
+      <div class="col-sm-6 mt-5" data-aos="fade-right">
         <h1 class="fw-bolder">Retrouver tous les bons plans d'Internet au même endroit.</h1>
       </div>
-      <div class="col-sm-6 mt-5">
-        <div class="data-aos="fade-left"">
+      <div class="col-sm-6 mt-5" data-aos="fade-left">
+        <div >
           <div>
             <h4 class="fw-bolder">Faire des économies sur Internet en utilisant un code promo</h4>
           </div>
@@ -64,18 +64,18 @@
     </div>
   </div>
   <div class="container mt-5">
-    <div class="text-center mb-5">
+    <div class="text-center mb-5" data-aos="fade-up">
       <h1 class="fw-bolder">Best Deals c'est quoi ?</h1>
     </div>
     <div class="row">
-      <div class="col-md-6 text-center">
+      <div class="col-md-6 text-center" data-aos="fade-right">
         <img class="" src="{{ asset('images/deal.png') }}" alt="deal" width="150" height="auto">
         <h3 class="text-center fw-bolder mb-4">Des bon plans</h3>
         <p>Des bons plans pour vous faire <br> économiser le plus d'argents.</p>
 
 
       </div>
-      <div class="col-md-6 text-center">
+      <div class="col-md-6 text-center" data-aos="fade-left">
         <img src="{{ asset('images/coupon.png') }}" alt="coupon" width="150" height="auto">
         <h3 class="text-center fw-bolder">Code Promo</h3>
         <p>Des codes promo chers <br> des milliers d'enseignes.</p>
@@ -84,14 +84,14 @@
       </div>
     </div>
     <div class="row mt-5">
-      <div class="col-md-6 text-center">
+      <div class="col-md-6 text-center" data-aos="fade-right">
         <img src="{{ asset('images/hot-deal.png') }}" alt="hot-deals" width="150" height="auto">
         <h3 class="text-center fw-bolder mb-4">Offre Spécial</h3>
         <p>Des offres spéciales avec des prix <br> battant tout concurrence.</p>
 
 
       </div>
-      <div class="col-md-6 text-center">
+      <div class="col-md-6 text-center" data-aos="fade-left">
         <img src="{{ asset('images/notification.png') }}" alt="notification" width="150" height="auto">
         <h3 class="text-center fw-bolder">Notification</h3>
         <p>Soyez toujours averti des offres <br> en activent les notifications !</p>
