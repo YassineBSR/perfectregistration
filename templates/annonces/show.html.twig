@@ -13,11 +13,11 @@
             <div class="col-md-8">
                 <h2 class="fw-bolder mt-2 mb-4">{{ annonces.title }}</h2>
                 <h2 class="text-danger fw-bold mb-4">{{ annonces.price }} €</h2>
-                <button type="button" class="btn btn-primary btn-lg mb-4" href="{{ annonces.link }}">Voir le Deal <i class="fa-solid fa-arrow-up-right-from-square"></i></button>
+                <a type="button" class="btn btn-primary btn-lg mb-4" target="_blank" href="{{ annonces.link }}">Voir le Deal <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                 <p>Partagé par {{ annonces.user.firstname }}</p>
             </div>
-            <h5 class="border border-rounded ">{{ annonces.createat|date('d/m/Y') }}</h5>
-            <p>{{ annonces.description }}</p>
+            <h5 class="border border-rounded mt-4">{{ annonces.createat|date('d/m/Y') }}</h5>
+            <p class="mt-4">{{ annonces.description }}</p>
         </div>
     </div>
 </section>
